@@ -9,16 +9,38 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            primary: '#4F46E5',
-            secondary: '#7C3AED',
-            accent: '#10B981',
-            dark: '#1F2937',
-            light: '#F9FAFB',
-            gradientFrom: '#4F46E5',
-            gradientTo: '#7C3AED'
+            primary: { 
+              light: '#4F46E5', 
+              dark: '#818cf8' 
+            },
+            secondary: { 
+              light: '#7C3AED', 
+              dark: '#a78bfa' 
+            },
+            accent: { 
+              light: '#10B981', 
+              dark: '#34d399' 
+            },
+            dark: { 
+              light: '#1F2937', 
+              dark: '#111827' 
+            },
+            light: { 
+              light: '#F9FAFB', 
+              dark: '#1f2937' 
+            },
+            gradientFrom: { 
+              light: '#4F46E5', 
+              dark: '#111827' 
+            },
+            gradientTo: { 
+              light: '#7C3AED', 
+              dark: '#1e40af' 
+            }
           }
         }
       }
@@ -35,13 +57,160 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     
+    :root {
+      --bg-primary-light: #F9FAFB;
+      --bg-primary-dark: #111827;
+      --text-primary-light: #1F2937;
+      --text-primary-dark: #F9FAFB;
+    }
+    
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #F9FAFB, #E5E7EB, #D1D5DB);
+      background: linear-gradient(135deg, var(--bg-primary-light), #E5E7EB, #D1D5DB);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
-      color: #1F2937;
+      color: var(--text-primary-light);
+      padding-top: 100px;
+      transition: background 0.5s ease, color 0.3s ease;
     }
+    
+    body.dark-mode {
+      background: linear-gradient(135deg, var(--bg-primary-dark), #1F2937, #374151);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: var(--text-primary-dark);
+    }
+    
+    .dark-mode .profile-img {
+      border: 4px solid #818cf8;
+      box-shadow: 0 0 25px rgba(129, 140, 248, 0.5);
+    }
+    
+    .dark-mode .profile-img:hover {
+      box-shadow: 0 0 35px rgba(129, 140, 248, 0.8);
+    }
+    
+    .dark-mode .skill-card,
+    .dark-mode .tool-card,
+    .dark-mode .project-card,
+    .dark-mode .about-card,
+    .dark-mode .stat-card,
+    .dark-mode .article-card {
+      background: rgba(31, 41, 55, 0.9);
+      border-color: rgba(55, 65, 81, 0.8);
+      color: #F9FAFB;
+    }
+    
+    .dark-mode .section-title {
+      background: linear-gradient(135deg, #818cf8, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .dark-mode .custom-navbar {
+      background-color: #111827;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    .dark-mode .custom-nav-btn {
+      background-color: #1F2937;
+      color: #9CA3AF;
+    }
+    
+    .dark-mode .custom-nav-btn:hover {
+      background-color: #374151;
+    }
+    
+    /* ألوان الأزرار في الوضع الداكن */
+    .dark-mode .about-btn { 
+      background-color: #1F2937;
+      color: #60A5FA !important; 
+    }
+    .dark-mode .services-btn { 
+      background-color: #1F2937;
+      color: #34D399 !important; 
+    }
+    .dark-mode .tools-btn { 
+      background-color: #1F2937;
+      color: #FBBF24 !important; 
+    }
+    .dark-mode .stats-btn { 
+      background-color: #1F2937;
+      color: #F87171 !important; 
+    }
+    .dark-mode .experience-btn { 
+      background-color: #1F2937;
+      color: #A78BFA !important; 
+    }
+    .dark-mode .projects-btn { 
+      background-color: #1F2937;
+      color: #F472B6 !important; 
+    }
+    .dark-mode .contact-btn { 
+      background-color: #1F2937;
+      color: #F97316 !important; 
+    }
+    
+    .dark-mode .about-btn:hover { 
+      background-color: #374151;
+      color: #93C5FD !important; 
+    }
+    .dark-mode .services-btn:hover { 
+      background-color: #374151;
+      color: #6EE7B7 !important; 
+    }
+    .dark-mode .tools-btn:hover { 
+      background-color: #374151;
+      color: #FCD34D !important; 
+    }
+    .dark-mode .stats-btn:hover { 
+      background-color: #374151;
+      color: #FCA5A5 !important; 
+    }
+    .dark-mode .experience-btn:hover { 
+      background-color: #374151;
+      color: #C4B5FD !important; 
+    }
+    .dark-mode .projects-btn:hover { 
+      background-color: #374151;
+      color: #F9A8D4 !important; 
+    }
+    .dark-mode .contact-btn:hover { 
+      background-color: #374151;
+      color: #FDBA74 !important; 
+    }
+    
+    /* تحسينات للقراءة والتباين */
+    .about-card p {
+      color: #374151 !important;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+    
+    .dark-mode .about-card p {
+      color: #E5E7EB !important;
+    }
+    
+    .skill-card p {
+      color: #4B5563 !important;
+      font-weight: 500;
+    }
+    
+    .dark-mode .skill-card p {
+      color: #D1D5DB !important;
+    }
+    
+    .skill-card h3 {
+      color: #1F2937;
+      font-weight: 700;
+    }
+    
+    .dark-mode .skill-card h3 {
+      color: #F9FAFB;
+    }
+    
+    /* باقي الأنماط تبقى كما هي مع إضافة تعديلات للوضع الداكن */
     
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
@@ -49,31 +218,12 @@
       100% { background-position: 0% 50%; }
     }
     
-    .nav-link {
-      position: relative;
-      padding: 0.5rem 0;
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #4F46E5, #7C3AED);
-      transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    
     .profile-img {
       border: 4px solid #4F46E5;
       box-shadow: 0 0 25px rgba(79, 70, 229, 0.5);
       transition: all 0.3s ease;
       object-fit: cover;
+      border-radius: 50%;
     }
     
     .profile-img:hover {
@@ -172,7 +322,7 @@
     
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+      box-shadow:  ‎0 10px 20px rgba(79, 70, 229, 0.3);
     }
     
     .section-title {
@@ -218,55 +368,629 @@
       object-fit: contain;
     }
     
+    /* تأثيرات الهولوغرام للتواصل */
+    .holographic-stack {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      perspective: 1000px;
+      margin-bottom: 2rem;
+    }
+    
+    .holographic-icon {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+    }
+    
+    .holographic-icon svg {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      z-index: 3;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 5px currentColor);
+    }
+    
+    .holographic-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      animation: rotate 3s linear infinite;
+      opacity: 0.7;
+    }
+    
+    .holographic-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        transparent 20%,
+        currentColor 20%,
+        currentColor 30%,
+        transparent 30%,
+        transparent 40%,
+        currentColor 40%,
+        currentColor 50%,
+        transparent 50%
+      );
+      background-size: 15px 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .holographic-pulse {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 15px currentColor;
+      opacity: 0;
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+    
+    .holographic-icon.facebook {
+      color: #3b5998;
+    }
+    
+    .holographic-icon.facebook:hover {
+      color: #3b5998;
+      transform: translateY(-10px) rotateX(20deg);
+    }
+    
+    .holographic-icon.facebook:hover .holographic-ring {
+      border-color: #3b5998;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+    
+    .holographic-icon.email {
+      color: #ea4335;
+    }
+    
+    .holographic-icon.email:hover {
+      color: #ea4335;
+      transform: translateY(-10px) rotateX(20deg);
+    }
+    
+    .holographic-icon.email:hover .holographic-ring {
+      border-color: #ea4335;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+    
+    .holographic-icon.linkedin {
+      color: #0077b5;
+    }
+    
+    .holographic-icon.linkedin:hover {
+      color: #0077b5;
+      transform: translateY(-10px) rotateX(20deg);
+    }
+    
+    .holographic-icon.linkedin:hover .holographic-ring {
+      border-color: #0077b5;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+    
+    .holographic-icon.github {
+      color: #6e5494;
+    }
+    
+    .holographic-icon.github:hover {
+      color: #333;
+      transform: translateY(-10px) rotateX(20deg);
+    }
+    
+    .holographic-icon.github:hover .holographic-ring {
+      border-color: #333;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+    
+    .holographic-icon.phone {
+      color: #34a853;
+    }
+    
+    .holographic-icon.phone:hover {
+      color: #34a853;
+      transform: translateY(-10px) rotateX(20deg);
+    }
+    
+    .holographic-icon.phone:hover .holographic-ring {
+      border-color: #34a853;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+    
+    .holographic-icon:hover {
+      transform: translateY(-10px) rotateX(20deg);
+    }
+    
+    .holographic-icon:hover svg {
+      transform: scale(1.2) rotate(10deg);
+    }
+    
+    .holographic-icon:hover .holographic-particles {
+      opacity: 0.3;
+      animation: particles 3s linear infinite;
+    }
+    
+    .holographic-icon:hover .holographic-pulse {
+      opacity: 0.5;
+      animation: pulse 2s ease-out infinite;
+    }
+    
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes particles {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 30px 30px;
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.2;
+      }
+      100% {
+        transform: scale(1.3);
+        opacity: 0;
+      }
+    }
+    
+    .holographic-icon::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 5%;
+      width: 90%;
+      height: 20%;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      filter: blur(10px);
+      transform: rotateX(80deg) translateZ(-20px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .holographic-icon:hover::before {
+      opacity: 0.5;
+    }
+    
     /* تأثيرات للهاتف */
     @media (max-width: 768px) {
-      .nav-link::after {
+      .cover-image {
+        height: 400px;
+      }
+      
+      .holographic-stack {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      
+      .holographic-icon {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .holographic-icon svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    /* أنماط شريط التنقل الجديد */
+    .custom-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1F2937;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      margin: 0 auto;
+      max-width: 90%;
+      position: fixed;
+      top: 1rem;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .custom-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: #374151;
+      color: #D1D5DB;
+      height: 2.25rem;
+      border-radius: 0.375rem;
+      padding: 0 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .custom-nav-btn:hover {
+      background-color: #4B5563;
+      transform: translateY(-2px);
+    }
+    
+    .custom-nav-btn i {
+      transition: all 0.2s;
+    }
+    
+    .custom-nav-btn:hover i {
+      transform: scale(1.1);
+    }
+    
+    .about-btn { color: #60A5FA; }
+    .services-btn { color: #34D399; }
+    .tools-btn { color: #FBBF24; }
+    .stats-btn { color: #F87171; }
+    .experience-btn { color: #A78BFA; }
+    .projects-btn { color: #F472B6; }
+    .contact-btn { color: #F97316; }
+    
+    .about-btn:hover { color: #93C5FD; }
+    .services-btn:hover { color: #6EE7B7; }
+    .tools-btn:hover { color: #FCD34D; }
+    .stats-btn:hover { color: #FCA5A5; }
+    .experience-btn:hover { color: #C4B5FD; }
+    .projects-btn:hover { color: #F9A8D4; }
+    .contact-btn:hover { color: #FDBA74; }
+    
+    /* From Uiverse.io by mobinkakei */ 
+    /* I am not the orginal creator */
+    .toggleWrapper {
+      overflow: hidden;
+      color: white;
+    }
+
+    .toggleWrapper .input {
+      position: absolute;
+      left: -99em;
+    }
+
+    .toggle {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      width: 90px;
+      height: 50px;
+      background-color: #83d8ff;
+      border-radius: 84px;
+      transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+
+    .toggle:before {
+      content: "Light";
+      position: absolute;
+      left: -50px;
+      top: 15px;
+      font-size: 18px;
+      color: #749ed7;
+    }
+
+    .toggle:after {
+      content: "Dark";
+      position: absolute;
+      right: -48px;
+      top: 15px;
+      font-size: 18px;
+    }
+
+    .toggle__handler {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      top: 3px;
+      left: 3px;
+      width: 44px;
+      height: 44px;
+      background-color: #ffcf96;
+      border-radius: 50px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform: rotate(-45deg);
+    }
+
+    .toggle__handler .crater {
+      position: absolute;
+      background-color: #e8cda5;
+      opacity: 0;
+      transition: opacity 200ms ease-in-out;
+      border-radius: 100%;
+    }
+
+    .toggle__handler .crater--1 {
+      top: 18px;
+      left: 10px;
+      width: 4px;
+      height: 4px;
+    }
+
+    .toggle__handler .crater--2 {
+      top: 28px;
+      left: 22px;
+      width: 6px;
+      height: 6px;
+    }
+
+    .toggle__handler .crater--3 {
+      top: 10px;
+      left: 25px;
+      width: 8px;
+      height: 8px;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      border-radius: 50%;
+    }
+
+    .star--1 {
+      top: 10px;
+      left: 35px;
+      z-index: 0;
+      width: 30px;
+      height: 3px;
+    }
+
+    .star--2 {
+      top: 18px;
+      left: 28px;
+      z-index: 1;
+      width: 30px;
+      height: 3px;
+    }
+
+    .star--3 {
+      top: 27px;
+      left: 40px;
+      z-index: 0;
+      width: 30px;
+      height: 3px;
+    }
+
+    .star--4,
+    .star--5,
+    .star--6 {
+      opacity: 0;
+      transition: all 300ms 0 cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+
+    .star--4 {
+      top: 16px;
+      left: 11px;
+      z-index: 0;
+      width: 2px;
+      height: 2px;
+      transform: translate3d(3px, 0, 0);
+    }
+
+    .star--5 {
+      top: 32px;
+      left: 17px;
+      z-index: 0;
+      width: 3px;
+      height: 3px;
+      transform: translate3d(3px, 0, 0);
+    }
+
+    .star--6 {
+      top: 36px;
+      left: 28px;
+      z-index: 0;
+      width: 2px;
+      height: 2px;
+      transform: translate3d(3px, 0, 0);
+    }
+
+    .input:checked + .toggle {
+      background-color: #749dd6;
+    }
+
+    .input:checked + .toggle:before {
+      color: #fff;
+    }
+
+    .input:checked + .toggle:after {
+      color: #749ed7;
+    }
+
+    .input:checked + .toggle .toggle__handler {
+      background-color: #ffe5b5;
+      transform: translate3d(40px, 0, 0) rotate(0);
+    }
+
+    .input:checked + .toggle .toggle__handler .crater {
+      opacity: 1;
+    }
+
+    .input:checked + .toggle .star--1 {
+      width: 2px;
+      height: 2px;
+    }
+
+    .input:checked + .toggle .star--2 {
+      width: 4px;
+      height: 4px;
+      transform: translate3d(-5px, 0, 0);
+    }
+
+    .input:checked + .toggle .star--3 {
+      width: 2px;
+      height: 2px;
+      transform: translate3d(-7px, 0, 0);
+    }
+
+    .input:checked + .toggle .star--4,
+    .input:checked + .toggle .star--5,
+    .input:checked + .toggle .star--6 {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .input:checked + .toggle .star--4 {
+      transition: all 300ms 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+
+    .input:checked + .toggle .star--5 {
+      transition: all 300ms 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+
+    .input:checked + .toggle .star--6 {
+      transition: all 300ms 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+    
+    @media (max-width: 1024px) {
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      
+      .custom-nav-btn {
+        flex: 1 0 calc(33.333% - 0.5rem);
+        min-width: 120px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .custom-navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .custom-nav-btn {
+        flex: 1 0 calc(50% - 0.5rem);
+      }
+      
+      .custom-nav-btn span {
         display: none;
       }
       
-      .header-content {
-        padding-top: 4rem;
+      .custom-nav-btn i {
+        margin-right: 0;
       }
       
-      .cover-image {
-        height: 400px;
+      .toggleWrapper {
+        margin-top: 1rem;
       }
     }
   </style>
 </head>
 <body class="min-h-screen">
 
+  <!-- شريط التنقل الجديد -->
+  <div class="custom-navbar" data-aos="fade-down">
+    <div class="toggleWrapper">
+      <input type="checkbox" class="input" id="theme-toggle"/>
+      <label for="theme-toggle" class="toggle">
+        <span class="toggle__handler">
+          <span class="crater crater--1"></span>
+          <span class="crater crater--2"></span>
+          <span class="crater crater--3"></span>
+        </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+      </label>
+    </div>
+    
+    <div class="nav-links">
+      <a href="#about" class="custom-nav-btn about-btn">
+        <i class="fas fa-user"></i>
+        <span>About</span>
+      </a>
+      <a href="#services" class="custom-nav-btn services-btn">
+        <i class="fas fa-cogs"></i>
+        <span>Services</span>
+      </a>
+      <a href="#tools" class="custom-nav-btn tools-btn">
+        <i class="fas fa-tools"></i>
+        <span>Tools</span>
+      </a>
+      <a href="#stats" class="custom-nav-btn stats-btn">
+        <i class="fas fa-chart-line"></i>
+        <span>Stats</span>
+      </a>
+      <a href="#experience" class="custom-nav-btn experience-btn">
+        <i class="fas fa-briefcase"></i>
+        <span>Experience</span>
+      </a>
+      <a href="#projects" class="custom-nav-btn projects-btn">
+        <i class="fas fa-project-diagram"></i>
+        <span>Projects</span>
+      </a>
+      <a href="#contact" class="custom-nav-btn contact-btn">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </div>
+  </div>
+
   <header class="relative">
   <div class="cover-image relative flex items-center justify-center">
-    <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80"></div>
-    
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md py-3 px-6 shadow-lg">
-      <div class="container mx-auto flex justify-between items-center">
-        <a href="#" class="text-xl font-bold text-primary">Shehab<span class="text-dark">Portfolio</span></a>
-        
-        <div class="hidden md:flex gap-8">
-          <a href="#about" class="nav-link text-dark hover:text-primary">About</a>
-          <a href="#services" class="nav-link text-dark hover:text-primary">Services</a>
-          <a href="#tools" class="nav-link text-dark hover:text-primary">Tools</a>
-          <a href="#stats" class="nav-link text-dark hover:text-primary">Stats</a>
-          <a href="#experience" class="nav-link text-dark hover:text-primary">Experience</a>
-          <a href="#projects" class="nav-link text-dark hover:text-primary">Projects</a>
-          <a href="#contact" class="nav-link text-dark hover:text-primary">Contact</a>
-        </div>
-        
-        <!-- Mobile menu button -->
-        <button class="md:hidden text-dark">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </nav>
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-light/80 to-secondary-light/80 dark:from-primary-dark/80 dark:to-secondary-dark/80"></div>
 
     <!-- Main Content -->
     <div class="text-center relative z-10 px-4 header-content pt-32 md:pt-40" data-aos="fade-up">
       <!-- استبدال الأحرف الأولى بالصورة الشخصية -->
       <div class="w-40 h-40 rounded-full mx-auto mb-6 overflow-hidden border-4 border-white shadow-lg">
-        <img src="me.jpg" alt="Shehab El-Din Ahmed" class="w-full h-full object-cover">
+        <img src="me.jpg" alt="Shehab El-Din Ahmed" class="w-full h-full object-cover profile-img">
       </div>
       <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Shehab El-Din Ahmed</h1>
       <p class="text-xl md:text-2xl mb-6 text-white">Data Engineer</p>
@@ -288,19 +1012,19 @@
         <div class="flex flex-col md:flex-row gap-8 items-center">
           <div class="flex-shrink-0">
             <!-- استبدال الأحرف الأولى بالصورة الشخصية -->
-            <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-primary shadow-lg">
-              <img src="me.jpg" alt="Shehab El-Din Ahmed" class="w-full h-full object-cover">
+            <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark shadow-lg">
+              <img src="me.jpg" alt="Shehab El-Din Ahmed" class="w-full h-full object-cover profile-img">
             </div>
           </div>
           <div class="text-center md:text-left">
-            <p class="text-lg md:text-xl mb-4 text-dark/80 leading-relaxed">
+            <p class="text-lg md:text-xl mb-4 leading-relaxed">
               I'm Shehab El-Din Ahmed Mowed, a fast-learning Data Engineer from Beni Suef, Egypt.
               I specialize in designing and optimizing data pipelines, ETL workflows, and scalable database solutions using Python, SQL, and Apache Airflow.
             </p>
-            <p class="text-lg md:text-xl mb-4 text-dark/80 leading-relaxed">
+            <p class="text-lg md:text-xl mb-4 leading-relaxed">
               My main interests are Big Data and Cloud Data Engineering, where I aim to build efficient systems that transform raw data into actionable business insights. I bring curiosity, problem-solving skills, and a continuous learning mindset to every project.
             </p>
-            <p class="text-lg md:text-xl text-dark/80 leading-relaxed">
+            <p class="text-lg md:text-xl leading-relaxed">
               Currently, I'm expanding my expertise through hands-on projects and knowledge sharing, and I'm always open to connecting, collaborating, and exploring new opportunities in the field of data engineering.
             </p>
           </div>
@@ -316,58 +1040,58 @@
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="skill-card p-6 rounded-xl" data-aos="fade-up">
-          <div class="text-4xl text-primary mb-4">
+          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fab fa-python"></i>
           </div>
           <h3 class="text-xl font-bold mb-2">Python Development</h3>
-          <p class="text-dark/70">Building advanced data applications using Pandas, NumPy, and developing ETL systems</p>
+          <p>Building advanced data applications using Pandas, NumPy, and developing ETL systems</p>
         </div>
         
         <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-          <div class="text-4xl text-primary mb-4">
+          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-bolt"></i>
           </div>
           <h3 class="text-xl font-bold mb-2">Apache Spark</h3>
-          <p class="text-dark/70">Processing big data using Spark for data analysis and implementing distributed algorithms</p>
+          <p>Processing big data using Spark for data analysis and implementing distributed algorithms</p>
         </div>
         
         <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-          <div class="text-4xl text-primary mb-4">
+          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-exchange-alt"></i>
           </div>
           <h3 class="text-xl font-bold mb-2">Kafka Systems</h3>
-          <p class="text-dark/70">Building real-time data systems using Kafka for streaming and system integration</p>
+          <p>Building real-time data systems using Kafka for streaming and system integration</p>
         </div>
         
         <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
-          <div class="text-4xl text-primary mb-4">
+          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-database"></i>
           </div>
           <h3 class="text-xl font-bold mb-2">Database Management</h3>
-          <p class="text-dark/70">Designing and optimizing database systems for performance and scalability</p>
+          <p>Designing and optimizing database systems for performance and scalability</p>
         </div>
         
         <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="400">
-          <div class="text-4xl text-primary mb-4">
+          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-cloud"></i>
           </div>
           <h3 class="text-xl font-bold mb-2">Cloud Solutions</h3>
-          <p class="text-dark/70">Deploying and managing data infrastructure on cloud platforms like AWS</p>
+          <p>Deploying and managing data infrastructure on cloud platforms like AWS</p>
         </div>
         
         <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="500">
-          <div class="text-4xl text-primary mb-4">
+          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-chart-bar"></i>
           </div>
           <h3 class="text-xl font-bold mb-2">Data Visualization</h3>
-          <p class="text-dark/70">Creating interactive dashboards and reports for data insights</p>
+          <p>Creating interactive dashboards and reports for data insights</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Tools -->
-  <section id="tools" class="py-20 px-4 bg-white/50">
+  <section id="tools" class="py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
     <div class="container mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">My <span class="section-title">Tools</span> & Technologies</h2>
       
@@ -395,7 +1119,7 @@
         
         <div class="tool-card" data-aos="zoom-in" data-aos-delay="300">
           <div class="tool-icon">
-            <i class="fas fa-code text-5xl text-black"></i>
+            <i class="fas fa-code text-5xl text-black dark:text-white"></i>
           </div>
           <h3 class="font-semibold">Kafka</h3>
         </div>
@@ -466,22 +1190,22 @@
       
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="stat-card p-6 rounded-xl text-center" data-aos="zoom-in">
-          <div class="text-5xl font-bold text-primary mb-2">+1</div>
+          <div class="text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+1</div>
           <p class="text-lg">Years Experience</p>
         </div>
         
         <div class="stat-card p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="text-5xl font-bold text-primary mb-2">+3</div>
+          <div class="text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+3</div>
           <p class="text-lg">Projects Completed</p>
         </div>
         
         <div class="stat-card p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="200">
-          <div class="text-5xl font-bold text-primary mb-2">+2</div>
+          <div class="text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+2</div>
           <p class="text-lg">Articles Published</p>
         </div>
         
         <div class="stat-card p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="300">
-          <div class="text-5xl font-bold text-primary mb-2">+3</div>
+          <div class="text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+3</div>
           <p class="text-lg">Satisfied Clients</p>
         </div>
       </div>
@@ -489,21 +1213,21 @@
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="py-20 px-4 bg-white/50">
+  <section id="experience" class="py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
     <div class="container mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Professional <span class="section-title">Experience</span></h2>
       
       <div class="max-w-3xl mx-auto space-y-12">
         <div class="flex gap-6" data-aos="fade-right">
           <div class="flex-shrink-0">
-            <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-              <i class="fas fa-briefcase text-2xl text-primary"></i>
+            <div class="w-16 h-16 rounded-full bg-primary-light/20 dark:bg-primary-dark/20 flex items-center justify-center">
+              <i class="fas fa-briefcase text-2xl text-primary-light dark:text-primary-dark"></i>
             </div>
           </div>
-          <div class="bg-white/80 p-6 rounded-xl flex-grow">
+          <div class="bg-white/80 dark:bg-dark-dark/80 p-6 rounded-xl flex-grow">
             <h3 class="text-xl font-bold mb-2">Data Engineer - DEPI Company</h3>
-            <p class="text-primary mb-2">2024 - Present</p>
-            <p class="text-dark/80">Building ETL pipelines using Airflow and Spark, managing big data architecture, and analyzing data to extract valuable insights.</p>
+            <p class="text-primary-light dark:text-primary-dark mb-2">2024 - Present</p>
+            <p class="text-dark-light/80 dark:text-light-dark/80">Building ETL pipelines using Airflow and Spark, managing big data architecture, and analyzing data to extract valuable insights.</p>
           </div>
         </div>
       </div>
@@ -518,37 +1242,37 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Titanic Data Analysis Project -->
         <div class="project-card rounded-xl overflow-hidden" data-aos="flip-left">
-          <div class="h-48 bg-gradient-to-r from-primary/30 to-secondary/30 flex items-center justify-center">
+          <div class="h-48 bg-gradient-to-r from-primary-light/30 to-secondary-light/30 dark:from-primary-dark/30 dark:to-secondary-dark/30 flex items-center justify-center">
             <i class="fas fa-ship text-6xl text-white"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2">Titanic Data Analysis</h3>
-            <p class="text-dark/70 mb-4">Advanced exploratory analysis using Python and Pandas with interactive visualizations.</p>
-            <a href="https://github.com/shehab-hub-0/titanic-visualization" class="text-primary font-semibold hover:underline">View Project →</a>
+            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4">Advanced exploratory analysis using Python and Pandas with interactive visualizations.</p>
+            <a href="https://github.com/shehab-hub-0/titanic-visualization" class="text-primary-light dark:text-primary-dark font-semibold hover:underline">View Project →</a>
           </div>
         </div>
         
         <!-- ETL Pipeline Project -->
         <div class="project-card rounded-xl overflow-hidden" data-aos="flip-left" data-aos-delay="100">
-          <div class="h-48 bg-gradient-to-r from-secondary/30 to-primary/30 flex items-center justify-center">
+          <div class="h-48 bg-gradient-to-r from-secondary-light/30 to-primary-light/30 dark:from-secondary-dark/30 dark:to-primary-dark/30 flex items-center justify-center">
             <i class="fas fa-code-branch text-6xl text-white"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2">ETL Pipeline</h3>
-            <p class="text-dark/70 mb-4">Building ETL pipeline using Airflow for data processing and storage.</p>
-            <a href="https://github.com/shehab-hub-0/ETL-Pipeline" class="text-primary font-semibold hover:underline">View Project →</a>
+            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4">Building ETL pipeline using Airflow for data processing and storage.</p>
+            <a href="https://github.com/shehab-hub-0/ETL-Pipeline" class="text-primary-light dark:text-primary-dark font-semibold hover:underline">View Project →</a>
           </div>
         </div>
         
         <!-- Interactive Dashboard Project -->
         <div class="project-card rounded-xl overflow-hidden" data-aos="flip-left" data-aos-delay="200">
-          <div class="h-48 bg-gradient-to-r from-primary/30 to-secondary/30 flex items-center justify-center">
+          <div class="h-48 bg-gradient-to-r from-primary-light/30 to-secondary-light/30 dark:from-primary-dark/30 dark:to-secondary-dark/30 flex items-center justify-center">
             <i class="fas fa-chart-bar text-6xl text-white"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2">Interactive Dashboard</h3>
-            <p class="text-dark/70 mb-4">Interactive data visualization using Dash and Plotly.</p>
-            <a href="https://github.com/shehab-hub-0/Interactive-Dashboard" class="text-primary font-semibold hover:underline">View Project →</a>
+            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4">Interactive data visualization using Dash and Plotly.</p>
+            <a href="https://github.com/shehab-hub-0/Interactive-Dashboard" class="text-primary-light dark:text-primary-dark font-semibold hover:underline">View Project →</a>
           </div>
         </div>
       </div>
@@ -556,39 +1280,59 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-4 bg-white/50">
+  <section id="contact" class="py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Contact <span class="section-title">Me</span></h2>
       <p class="text-xl mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">I'm available for freelance work and collaborative projects. Feel free to reach out!</p>
       
-      <div class="flex justify-center gap-6 flex-wrap mb-16" data-aos="zoom-in">
-        <a href="https://www.facebook.com/share/1BEzMmU6iu/" class="social-icon text-blue-500">
+      <!-- Holographic Social Icons -->
+      <div class="holographic-stack" data-aos="zoom-in">
+        <a href="https://www.facebook.com/share/1BEzMmU6iu/" class="holographic-icon facebook">
+          <div class="holographic-ring"></div>
+          <div class="holographic-particles"></div>
+          <div class="holographic-pulse"></div>
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="mailto:shahbahmed56p@gmail.com" class="social-icon text-red-400">
+        
+        <a href="mailto:shahbahmed56p@gmail.com" class="holographic-icon email">
+          <div class="holographic-ring"></div>
+          <div class="holographic-particles"></div>
+          <div class="holographic-pulse"></div>
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://www.linkedin.com/in/shehab-eldinahmed" class="social-icon text-blue-300">
+        
+        <a href="https://www.linkedin.com/in/shehab-eldinahmed" class="holographic-icon linkedin">
+          <div class="holographic-ring"></div>
+          <div class="holographic-particles"></div>
+          <div class="holographic-pulse"></div>
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="https://github.com/shehab-hub-0" class="social-icon text-gray-700">
+        
+        <a href="https://github.com/shehab-hub-0" class="holographic-icon github">
+          <div class="holographic-ring"></div>
+          <div class="holographic-particles"></div>
+          <div class="holographic-pulse"></div>
           <i class="fab fa-github"></i>
         </a>
-        <a href="tel:+201011457319" class="social-icon text-green-400">
+        
+        <a href="tel:+201011457319" class="holographic-icon phone">
+          <div class="holographic-ring"></div>
+          <div class="holographic-particles"></div>
+          <div class="holographic-pulse"></div>
           <i class="fas fa-phone"></i>
         </a>
       </div>
       
-      <div class="max-w-md mx-auto bg-white/80 p-8 rounded-xl" data-aos="fade-up">
+      <div class="max-w-md mx-auto bg-white/80 dark:bg-dark-dark/80 p-8 rounded-xl" data-aos="fade-up">
         <form>
           <div class="mb-4">
-            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 bg-white/90 border border-gray-300 rounded-lg focus:outline-none focus:border-primary">
+            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark">
           </div>
           <div class="mb-4">
-            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-white/90 border border-gray-300 rounded-lg focus:outline-none focus:border-primary">
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark">
           </div>
           <div class="mb-4">
-            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-white/90 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"></textarea>
+            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark"></textarea>
           </div>
           <button type="submit" class="btn-primary w-full py-3 rounded-lg font-semibold">Send Message</button>
         </form>
@@ -597,7 +1341,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 px-4 text-center bg-dark text-white">
+  <footer class="py-8 px-4 text-center bg-dark-light dark:bg-dark-dark text-white">
     <p>© 2025 Shehab El-Din Ahmed - Built with TailwindCSS & AOS</p>
   </footer>
 
@@ -610,17 +1354,38 @@
       offset: 100
     });
 
-    // Add scroll effects
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.classList.add('shadow-lg', 'bg-white');
+    // Add smooth scrolling for navigation links
+    document.querySelectorAll('.custom-nav-btn').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Toggle theme functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check for saved theme preference or respect OS preference
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('dark-mode');
+      themeToggle.checked = true;
+    }
+    
+    themeToggle.addEventListener('change', function() {
+      if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
       } else {
-        nav.classList.remove('shadow-lg', 'bg-white');
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
       }
     });
   </script>
 </body>
-
 </html>
-
