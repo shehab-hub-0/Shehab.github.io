@@ -83,11 +83,11 @@
     
     .dark-mode .profile-img {
       border: 4px solid #818cf8;
-      box-shadow: 0 0 25px rgba(129, 140, 248, 0.5);
+      box-shadow: 0 0 15px rgba(129, 140, 248, 0.5);
     }
     
     .dark-mode .profile-img:hover {
-      box-shadow: 0 0 35px rgba(129, 140, 248, 0.8);
+      box-shadow: 0 0 25px rgba(129, 140, 248, 0.8);
     }
     
     .dark-mode .skill-card,
@@ -210,6 +210,141 @@
       color: #F9FAFB;
     }
     
+    /* تحسينات للهاتف */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 80px;
+      }
+      
+      .profile-img {
+        width: 120px !important;
+        height: 120px !important;
+      }
+      
+      .cover-image {
+        height: 350px !important;
+      }
+      
+      .header-content {
+        padding-top: 80px !important;
+      }
+      
+      .header-content h1 {
+        font-size: 2rem !important;
+      }
+      
+      .header-content p {
+        font-size: 1.1rem !important;
+      }
+      
+      .about-card {
+        padding: 1.5rem !important;
+      }
+      
+      .about-card .flex-col {
+        text-align: center;
+      }
+      
+      .about-card p {
+        font-size: 1rem !important;
+        line-height: 1.6;
+      }
+      
+      .section-title {
+        font-size: 2.5rem !important;
+      }
+      
+      .skill-card, .tool-card, .project-card {
+        padding: 1.2rem !important;
+      }
+      
+      .skill-card h3, .tool-card h3, .project-card h3 {
+        font-size: 1.2rem !important;
+      }
+      
+      .skill-card p, .tool-card p, .project-card p {
+        font-size: 0.9rem !important;
+      }
+      
+      .stat-card {
+        padding: 1.2rem !important;
+      }
+      
+      .stat-card .text-5xl {
+        font-size: 2.5rem !important;
+      }
+      
+      .holographic-stack {
+        gap: 15px !important;
+        flex-wrap: wrap;
+      }
+      
+      .holographic-icon {
+        width: 50px !important;
+        height: 50px !important;
+      }
+      
+      .holographic-icon svg {
+        width: 25px !important;
+        height: 25px !important;
+      }
+      
+      .contact-form {
+        padding: 1.5rem !important;
+      }
+    }
+    
+    /* تحسينات إضافية للشاشات الصغيرة جدًا */
+    @media (max-width: 480px) {
+      .profile-img {
+        width: 100px !important;
+        height: 100px !important;
+      }
+      
+      .header-content h1 {
+        font-size: 1.8rem !important;
+      }
+      
+      .header-content p {
+        font-size: 1rem !important;
+      }
+      
+      .header-content a {
+        padding: 0.8rem 1.2rem !important;
+        font-size: 0.9rem !important;
+      }
+      
+      .section-title {
+        font-size: 2rem !important;
+      }
+      
+      .about-card {
+        padding: 1rem !important;
+      }
+      
+      .about-card p {
+        font-size: 0.9rem !important;
+      }
+      
+      .skill-card, .tool-card, .project-card {
+        padding: 1rem !important;
+      }
+      
+      .tool-icon i {
+        font-size: 2.5rem !important;
+      }
+      
+      .holographic-icon {
+        width: 45px !important;
+        height: 45px !important;
+      }
+      
+      .holographic-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+    
     /* باقي الأنماط تبقى كما هي مع إضافة تعديلات للوضع الداكن */
     
     @keyframes gradientBG {
@@ -220,7 +355,7 @@
     
     .profile-img {
       border: 4px solid #4F46E5;
-      box-shadow: 0 0 25px rgba(79, 70, 229, 0.5);
+      box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
       transition: all 0.3s ease;
       object-fit: cover;
       border-radius: 50%;
@@ -228,7 +363,7 @@
     
     .profile-img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 35px rgba(79, 70, 229, 0.8);
+      box-shadow: 0 0 25px rgba(79, 70, 229, 0.8);
     }
     
     .skill-card {
@@ -322,7 +457,7 @@
     
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow:  ‎0 10px 20px rgba(79, 70, 229, 0.3);
+      box-shadow: ‎0 10px 20px rgba(79, 70, 229, 0.3);
     }
     
     .section-title {
@@ -589,28 +724,6 @@
       opacity: 0.5;
     }
     
-    /* تأثيرات للهاتف */
-    @media (max-width: 768px) {
-      .cover-image {
-        height: 400px;
-      }
-      
-      .holographic-stack {
-        gap: 15px;
-        flex-wrap: wrap;
-      }
-      
-      .holographic-icon {
-        width: 60px;
-        height: 60px;
-      }
-      
-      .holographic-icon svg {
-        width: 30px;
-        height: 30px;
-      }
-    }
-
     /* أنماط شريط التنقل الجديد */
     .custom-navbar {
       display: flex;
@@ -904,6 +1017,7 @@
         flex-direction: column;
         gap: 1rem;
         padding: 1rem;
+        top: 0.5rem;
       }
       
       .nav-links {
@@ -913,6 +1027,9 @@
       
       .custom-nav-btn {
         flex: 1 0 calc(50% - 0.5rem);
+        font-size: 0.8rem;
+        padding: 0 0.5rem;
+        height: 2rem;
       }
       
       .custom-nav-btn span {
@@ -921,10 +1038,53 @@
       
       .custom-nav-btn i {
         margin-right: 0;
+        font-size: 1rem;
       }
       
       .toggleWrapper {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
+      }
+      
+      .toggle {
+        width: 70px;
+        height: 40px;
+      }
+      
+      .toggle:before {
+        left: -40px;
+        top: 12px;
+        font-size: 14px;
+      }
+      
+      .toggle:after {
+        right: -38px;
+        top: 12px;
+        font-size: 14px;
+      }
+      
+      .toggle__handler {
+        width: 34px;
+        height: 34px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .custom-navbar {
+        padding: 0.8rem;
+      }
+      
+      .nav-links {
+        gap: 0.3rem;
+      }
+      
+      .custom-nav-btn {
+        flex: 1 0 calc(33.333% - 0.3rem);
+        height: 1.8rem;
+        border-radius: 0.25rem;
+      }
+      
+      .custom-nav-btn i {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -1004,27 +1164,27 @@
 </header>
 
   <!-- About Me -->
-  <section id="about" class="py-20 px-4">
+  <section id="about" class="py-16 md:py-20 px-4">
     <div class="container mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">About <span class="section-title">Me</span></h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16" data-aos="fade-up">About <span class="section-title">Me</span></h2>
       
-      <div class="about-card max-w-4xl mx-auto p-8 rounded-xl" data-aos="fade-up">
-        <div class="flex flex-col md:flex-row gap-8 items-center">
+      <div class="about-card max-w-4xl mx-auto p-6 md:p-8 rounded-xl" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
           <div class="flex-shrink-0">
             <!-- استبدال الأحرف الأولى بالصورة الشخصية -->
-            <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark shadow-lg">
+            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark shadow-lg">
               <img src="me.jpg" alt="Shehab El-Din Ahmed" class="w-full h-full object-cover profile-img">
             </div>
           </div>
           <div class="text-center md:text-left">
-            <p class="text-lg md:text-xl mb-4 leading-relaxed">
+            <p class="text-base md:text-lg lg:text-xl mb-4 leading-relaxed">
               I'm Shehab El-Din Ahmed Mowed, a fast-learning Data Engineer from Beni Suef, Egypt.
               I specialize in designing and optimizing data pipelines, ETL workflows, and scalable database solutions using Python, SQL, and Apache Airflow.
             </p>
-            <p class="text-lg md:text-xl mb-4 leading-relaxed">
+            <p class="text-base md:text-lg lg:text-xl mb-4 leading-relaxed">
               My main interests are Big Data and Cloud Data Engineering, where I aim to build efficient systems that transform raw data into actionable business insights. I bring curiosity, problem-solving skills, and a continuous learning mindset to every project.
             </p>
-            <p class="text-lg md:text-xl leading-relaxed">
+            <p class="text-base md:text-lg lg:text-xl leading-relaxed">
               Currently, I'm expanding my expertise through hands-on projects and knowledge sharing, and I'm always open to connecting, collaborating, and exploring new opportunities in the field of data engineering.
             </p>
           </div>
@@ -1034,200 +1194,200 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-20 px-4">
+  <section id="services" class="py-16 md:py-20 px-4">
     <div class="container mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">My <span class="section-title">Services</span></h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16" data-aos="fade-up">My <span class="section-title">Services</span></h2>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="skill-card p-6 rounded-xl" data-aos="fade-up">
-          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="skill-card p-5 md:p-6 rounded-xl" data-aos="fade-up">
+          <div class="text-3xl md:text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fab fa-python"></i>
           </div>
-          <h3 class="text-xl font-bold mb-2">Python Development</h3>
-          <p>Building advanced data applications using Pandas, NumPy, and developing ETL systems</p>
+          <h3 class="text-lg md:text-xl font-bold mb-2">Python Development</h3>
+          <p class="text-sm md:text-base">Building advanced data applications using Pandas, NumPy, and developing ETL systems</p>
         </div>
         
-        <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
+        <div class="skill-card p-5 md:p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-3xl md:text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-bolt"></i>
           </div>
-          <h3 class="text-xl font-bold mb-2">Apache Spark</h3>
-          <p>Processing big data using Spark for data analysis and implementing distributed algorithms</p>
+          <h3 class="text-lg md:text-xl font-bold mb-2">Apache Spark</h3>
+          <p class="text-sm md:text-base">Processing big data using Spark for data analysis and implementing distributed algorithms</p>
         </div>
         
-        <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
+        <div class="skill-card p-5 md:p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-3xl md:text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-exchange-alt"></i>
           </div>
-          <h3 class="text-xl font-bold mb-2">Kafka Systems</h3>
-          <p>Building real-time data systems using Kafka for streaming and system integration</p>
+          <h3 class="text-lg md:text-xl font-bold mb-2">Kafka Systems</h3>
+          <p class="text-sm md:text-base">Building real-time data systems using Kafka for streaming and system integration</p>
         </div>
         
-        <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
-          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
+        <div class="skill-card p-5 md:p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-3xl md:text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-database"></i>
           </div>
-          <h3 class="text-xl font-bold mb-2">Database Management</h3>
-          <p>Designing and optimizing database systems for performance and scalability</p>
+          <h3 class="text-lg md:text-xl font-bold mb-2">Database Management</h3>
+          <p class="text-sm md:text-base">Designing and optimizing database systems for performance and scalability</p>
         </div>
         
-        <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="400">
-          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
+        <div class="skill-card p-5 md:p-6 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-3xl md:text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-cloud"></i>
           </div>
-          <h3 class="text-xl font-bold mb-2">Cloud Solutions</h3>
-          <p>Deploying and managing data infrastructure on cloud platforms like AWS</p>
+          <h3 class="text-lg md:text-xl font-bold mb-2">Cloud Solutions</h3>
+          <p class="text-sm md:text-base">Deploying and managing data infrastructure on cloud platforms like AWS</p>
         </div>
         
-        <div class="skill-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="500">
-          <div class="text-4xl text-primary-light dark:text-primary-dark mb-4">
+        <div class="skill-card p-5 md:p-6 rounded-xl" data-aos="fade-up" data-aos-delay="500">
+          <div class="text-3xl md:text-4xl text-primary-light dark:text-primary-dark mb-4">
             <i class="fas fa-chart-bar"></i>
           </div>
-          <h3 class="text-xl font-bold mb-2">Data Visualization</h3>
-          <p>Creating interactive dashboards and reports for data insights</p>
+          <h3 class="text-lg md:text-xl font-bold mb-2">Data Visualization</h3>
+          <p class="text-sm md:text-base">Creating interactive dashboards and reports for data insights</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Tools -->
-  <section id="tools" class="py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
+  <section id="tools" class="py-16 md:py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
     <div class="container mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">My <span class="section-title">Tools</span> & Technologies</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16" data-aos="fade-up">My <span class="section-title">Tools</span> & Technologies</h2>
       
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        <div class="tool-card" data-aos="zoom-in">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in">
           <div class="tool-icon">
-            <i class="fab fa-python text-5xl text-blue-500"></i>
+            <i class="fab fa-python text-4xl md:text-5xl text-blue-500"></i>
           </div>
-          <h3 class="font-semibold">Python</h3>
+          <h3 class="font-semibold text-sm md:text-base">Python</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="tool-icon">
-            <i class="fas fa-database text-5xl text-blue-700"></i>
+            <i class="fas fa-database text-4xl md:text-5xl text-blue-700"></i>
           </div>
-          <h3 class="font-semibold">SQL</h3>
+          <h3 class="font-semibold text-sm md:text-base">SQL</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="tool-icon">
-            <i class="fab fa-microsoft text-5xl text-blue-600"></i>
+            <i class="fab fa-microsoft text-4xl md:text-5xl text-blue-600"></i>
           </div>
-          <h3 class="font-semibold">Azure</h3>
+          <h3 class="font-semibold text-sm md:text-base">Azure</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="300">
           <div class="tool-icon">
-            <i class="fas fa-code text-5xl text-black dark:text-white"></i>
+            <i class="fas fa-code text-4xl md:text-5xl text-black dark:text-white"></i>
           </div>
-          <h3 class="font-semibold">Kafka</h3>
+          <h3 class="font-semibold text-sm md:text-base">Kafka</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="400">
           <div class="tool-icon">
-            <i class="fas fa-fire text-5xl text-orange-500"></i>
+            <i class="fas fa-fire text-4xl md:text-5xl text-orange-500"></i>
           </div>
-          <h3 class="font-semibold">Spark</h3>
+          <h3 class="font-semibold text-sm md:text-base">Spark</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="500">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="500">
           <div class="tool-icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original-wordmark.svg" alt="Hadoop" style="width: 80px; height: 80px;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original-wordmark.svg" alt="Hadoop" style="width: 60px; height: 60px;">
           </div>
-          <h3 class="font-semibold mt-2">Hadoop</h3>
+          <h3 class="font-semibold text-sm md:text-base mt-2">Hadoop</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="600">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="600">
           <div class="tool-icon">
-            <i class="fas fa-wind text-5xl text-teal-500"></i>
+            <i class="fas fa-wind text-4xl md:text-5xl text-teal-500"></i>
           </div>
-          <h3 class="font-semibold">Airflow</h3>
+          <h3 class="font-semibold text-sm md:text-base">Airflow</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="700">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="700">
           <div class="tool-icon">
-            <i class="fas fa-snowflake text-5xl text-blue-300"></i>
+            <i class="fas fa-snowflake text-4xl md:text-5xl text-blue-300"></i>
           </div>
-          <h3 class="font-semibold">Snowflake</h3>
+          <h3 class="font-semibold text-sm md:text-base">Snowflake</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="800">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="800">
           <div class="tool-icon">
-            <i class="fab fa-aws text-5xl text-orange-400"></i>
+            <i class="fab fa-aws text-4xl md:text-5xl text-orange-400"></i>
           </div>
-          <h3 class="font-semibold">AWS</h3>
+          <h3 class="font-semibold text-sm md:text-base">AWS</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="900">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="900">
           <div class="tool-icon">
-            <i class="fab fa-docker text-5xl text-blue-400"></i>
+            <i class="fab fa-docker text-4xl md:text-5xl text-blue-400"></i>
           </div>
-          <h3 class="font-semibold">Docker</h3>
+          <h3 class="font-semibold text-sm md:text-base">Docker</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="1000">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="1000">
           <div class="tool-icon">
-            <i class="fas fa-file-excel text-5xl text-green-600"></i>
+            <i class="fas fa-file-excel text-4xl md:text-5xl text-green-600"></i>
           </div>
-          <h3 class="font-semibold">Excel</h3>
+          <h3 class="font-semibold text-sm md:text-base">Excel</h3>
         </div>
         
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="1100">
+        <div class="tool-card p-3 md:p-4" data-aos="zoom-in" data-aos-delay="1100">
           <div class="tool-icon">
-            <i class="fas fa-chart-bar text-5xl text-yellow-500"></i>
+            <i class="fas fa-chart-bar text-4xl md:text-5xl text-yellow-500"></i>
           </div>
-          <h3 class="font-semibold">Power BI</h3>
+          <h3 class="font-semibold text-sm md:text-base">Power BI</h3>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Stats -->
-  <section id="stats" class="py-20 px-4">
+  <section id="stats" class="py-16 md:py-20 px-4">
     <div class="container mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Quick <span class="section-title">Stats</span></h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16" data-aos="fade-up">Quick <span class="section-title">Stats</span></h2>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="stat-card p-6 rounded-xl text-center" data-aos="zoom-in">
-          <div class="text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+1</div>
-          <p class="text-lg">Years Experience</p>
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div class="stat-card p-5 md:p-6 rounded-xl text-center" data-aos="zoom-in">
+          <div class="text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+1</div>
+          <p class="text-base md:text-lg">Years Experience</p>
         </div>
         
-        <div class="stat-card p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+3</div>
-          <p class="text-lg">Projects Completed</p>
+        <div class="stat-card p-5 md:p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+3</div>
+          <p class="text-base md:text-lg">Projects Completed</p>
         </div>
         
-        <div class="stat-card p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="200">
-          <div class="text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+2</div>
-          <p class="text-lg">Articles Published</p>
+        <div class="stat-card p-5 md:p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="200">
+          <div class="text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+2</div>
+          <p class="text-base md:text-lg">Articles Published</p>
         </div>
         
-        <div class="stat-card p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="300">
-          <div class="text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+3</div>
-          <p class="text-lg">Satisfied Clients</p>
+        <div class="stat-card p-5 md:p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="300">
+          <div class="text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark mb-2">+3</div>
+          <p class="text-base md:text-lg">Satisfied Clients</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
+  <section id="experience" class="py-16 md:py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
     <div class="container mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Professional <span class="section-title">Experience</span></h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16" data-aos="fade-up">Professional <span class="section-title">Experience</span></h2>
       
-      <div class="max-w-3xl mx-auto space-y-12">
-        <div class="flex gap-6" data-aos="fade-right">
+      <div class="max-w-3xl mx-auto space-y-8 md:space-y-12">
+        <div class="flex gap-4 md:gap-6" data-aos="fade-right">
           <div class="flex-shrink-0">
-            <div class="w-16 h-16 rounded-full bg-primary-light/20 dark:bg-primary-dark/20 flex items-center justify-center">
-              <i class="fas fa-briefcase text-2xl text-primary-light dark:text-primary-dark"></i>
+            <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary-light/20 dark:bg-primary-dark/20 flex items-center justify-center">
+              <i class="fas fa-briefcase text-xl md:text-2xl text-primary-light dark:text-primary-dark"></i>
             </div>
           </div>
-          <div class="bg-white/80 dark:bg-dark-dark/80 p-6 rounded-xl flex-grow">
-            <h3 class="text-xl font-bold mb-2">Data Engineer - DEPI Company</h3>
-            <p class="text-primary-light dark:text-primary-dark mb-2">2024 - Present</p>
-            <p class="text-dark-light/80 dark:text-light-dark/80">Building ETL pipelines using Airflow and Spark, managing big data architecture, and analyzing data to extract valuable insights.</p>
+          <div class="bg-white/80 dark:bg-dark-dark/80 p-4 md:p-6 rounded-xl flex-grow">
+            <h3 class="text-lg md:text-xl font-bold mb-2">Data Engineer - DEPI Company</h3>
+            <p class="text-primary-light dark:text-primary-dark mb-2 text-sm md:text-base">2024 - Present</p>
+            <p class="text-dark-light/80 dark:text-light-dark/80 text-sm md:text-base">Building ETL pipelines using Airflow and Spark, managing big data architecture, and analyzing data to extract valuable insights.</p>
           </div>
         </div>
       </div>
@@ -1235,44 +1395,44 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-20 px-4">
+  <section id="projects" class="py-16 md:py-20 px-4">
     <div class="container mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Featured <span class="section-title">Projects</span></h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16" data-aos="fade-up">Featured <span class="section-title">Projects</span></h2>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <!-- Titanic Data Analysis Project -->
         <div class="project-card rounded-xl overflow-hidden" data-aos="flip-left">
-          <div class="h-48 bg-gradient-to-r from-primary-light/30 to-secondary-light/30 dark:from-primary-dark/30 dark:to-secondary-dark/30 flex items-center justify-center">
-            <i class="fas fa-ship text-6xl text-white"></i>
+          <div class="h-40 md:h-48 bg-gradient-to-r from-primary-light/30 to-secondary-light/30 dark:from-primary-dark/30 dark:to-secondary-dark/30 flex items-center justify-center">
+            <i class="fas fa-ship text-5xl md:text-6xl text-white"></i>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Titanic Data Analysis</h3>
-            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4">Advanced exploratory analysis using Python and Pandas with interactive visualizations.</p>
-            <a href="https://github.com/shehab-hub-0/titanic-visualization" class="text-primary-light dark:text-primary-dark font-semibold hover:underline">View Project →</a>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold mb-2">Titanic Data Analysis</h3>
+            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4 text-sm md:text-base">Advanced exploratory analysis using Python and Pandas with interactive visualizations.</p>
+            <a href="https://github.com/shehab-hub-0/titanic-visualization" class="text-primary-light dark:text-primary-dark font-semibold hover:underline text-sm md:text-base">View Project →</a>
           </div>
         </div>
         
         <!-- ETL Pipeline Project -->
         <div class="project-card rounded-xl overflow-hidden" data-aos="flip-left" data-aos-delay="100">
-          <div class="h-48 bg-gradient-to-r from-secondary-light/30 to-primary-light/30 dark:from-secondary-dark/30 dark:to-primary-dark/30 flex items-center justify-center">
-            <i class="fas fa-code-branch text-6xl text-white"></i>
+          <div class="h-40 md:h-48 bg-gradient-to-r from-secondary-light/30 to-primary-light/30 dark:from-secondary-dark/30 dark:to-primary-dark/30 flex items-center justify-center">
+            <i class="fas fa-code-branch text-5xl md:text-6xl text-white"></i>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">ETL Pipeline</h3>
-            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4">Building ETL pipeline using Airflow for data processing and storage.</p>
-            <a href="https://github.com/shehab-hub-0/ETL-Pipeline" class="text-primary-light dark:text-primary-dark font-semibold hover:underline">View Project →</a>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold mb-2">ETL Pipeline</h3>
+            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4 text-sm md:text-base">Building ETL pipeline using Airflow for data processing and storage.</p>
+            <a href="https://github.com/shehab-hub-0/ETL-Pipeline" class="text-primary-light dark:text-primary-dark font-semibold hover:underline text-sm md:text-base">View Project →</a>
           </div>
         </div>
         
         <!-- Interactive Dashboard Project -->
         <div class="project-card rounded-xl overflow-hidden" data-aos="flip-left" data-aos-delay="200">
-          <div class="h-48 bg-gradient-to-r from-primary-light/30 to-secondary-light/30 dark:from-primary-dark/30 dark:to-secondary-dark/30 flex items-center justify-center">
-            <i class="fas fa-chart-bar text-6xl text-white"></i>
+          <div class="h-40 md:h-48 bg-gradient-to-r from-primary-light/30 to-secondary-light/30 dark:from-primary-dark/30 dark:to-secondary-dark/30 flex items-center justify-center">
+            <i class="fas fa-chart-bar text-5xl md:text-6xl text-white"></i>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Interactive Dashboard</h3>
-            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4">Interactive data visualization using Dash and Plotly.</p>
-            <a href="https://github.com/shehab-hub-0/Interactive-Dashboard" class="text-primary-light dark:text-primary-dark font-semibold hover:underline">View Project →</a>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold mb-2">Interactive Dashboard</h3>
+            <p class="text-dark-light/70 dark:text-light-dark/70 mb-4 text-sm md:text-base">Interactive data visualization using Dash and Plotly.</p>
+            <a href="https://github.com/shehab-hub-0/Interactive-Dashboard" class="text-primary-light dark:text-primary-dark font-semibold hover:underline text-sm md:text-base">View Project →</a>
           </div>
         </div>
       </div>
@@ -1280,10 +1440,10 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
+  <section id="contact" class="py-16 md:py-20 px-4 bg-white/50 dark:bg-dark-dark/50">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Contact <span class="section-title">Me</span></h2>
-      <p class="text-xl mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">I'm available for freelance work and collaborative projects. Feel free to reach out!</p>
+      <p class="text-lg md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">I'm available for freelance work and collaborative projects. Feel free to reach out!</p>
       
       <!-- Holographic Social Icons -->
       <div class="holographic-stack" data-aos="zoom-in">
@@ -1323,25 +1483,25 @@
         </a>
       </div>
       
-      <div class="max-w-md mx-auto bg-white/80 dark:bg-dark-dark/80 p-8 rounded-xl" data-aos="fade-up">
+      <div class="max-w-md mx-auto bg-white/80 dark:bg-dark-dark/80 p-6 md:p-8 rounded-xl contact-form" data-aos="fade-up">
         <form>
           <div class="mb-4">
-            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark">
+            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark text-sm md:text-base">
           </div>
           <div class="mb-4">
-            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark">
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark text-sm md:text-base">
           </div>
           <div class="mb-4">
-            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark"></textarea>
+            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-white/90 dark:bg-dark-dark/90 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary-light dark:focus:border-primary-dark text-sm md:text-base"></textarea>
           </div>
-          <button type="submit" class="btn-primary w-full py-3 rounded-lg font-semibold">Send Message</button>
+          <button type="submit" class="btn-primary w-full py-3 rounded-lg font-semibold text-sm md:text-base">Send Message</button>
         </form>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 px-4 text-center bg-dark-light dark:bg-dark-dark text-white">
+  <footer class="py-6 md:py-8 px-4 text-center bg-dark-light dark:bg-dark-dark text-white text-sm md:text-base">
     <p>© 2025 Shehab El-Din Ahmed - Built with TailwindCSS & AOS</p>
   </footer>
 
